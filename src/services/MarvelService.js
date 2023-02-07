@@ -38,7 +38,7 @@ const useMarvelService = () => {
     const _transformComics = (comics) => {
         return {
             id: comics.id,
-            title: comics.title ? `${comics.title.slice(0, 70)}...` : `Not avalible`,
+            title: comics.title ? comics.title.length > 70 ? `${comics.title.slice(0, 70)}...` : comics.title : `Not avalible`,
             thumbnail: `${comics.thumbnail.path}.${comics.thumbnail.extension}`,
             price: `${comics.prices[0].price}$`,
         }
